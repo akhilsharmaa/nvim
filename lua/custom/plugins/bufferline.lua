@@ -102,8 +102,8 @@ M.keys = {
   { '[b', '<cmd>BufferLineCyclePrev<CR>', desc = 'Prev buffer' },
 
   -- Buffer management
-  { '<leader>bc', '<cmd>bdelete<CR>', desc = 'Close buffer' },
-  { '<leader>bC', '<cmd>bdelete!<CR>', desc = 'Force close buffer' },
+  { '<leader>x', '<cmd>bdelete<CR>', desc = 'Close buffer' },
+  { '<leader>X', '<cmd>bdelete!<CR>', desc = 'Force close buffer' },
   { '<leader>bp', '<cmd>BufferLineTogglePin<CR>', desc = 'Toggle pin' },
   { '<leader>bP', '<cmd>BufferLineGroupClose ungrouped<CR>', desc = 'Delete non-pinned buffers' },
 
