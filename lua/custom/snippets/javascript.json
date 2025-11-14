@@ -1,0 +1,9 @@
+{
+  "errclass": {
+    "prefix": "errclass", 
+    "body": [
+      "export ${1:akhil's snippets}", 
+      "what is snippteres"
+    ]
+  }
+}

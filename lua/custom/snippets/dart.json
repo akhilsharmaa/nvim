@@ -1,0 +1,52 @@
+{
+ "Snippet: Flutter StatefulWidget": {
+    "prefix": "snippet:flutter:stful",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "",
+      "class ${1:MyWidget} extends StatefulWidget {",
+      "  const ${1:MyWidget}({super.key});",
+      "",
+      "  @override",
+      "  State<${1:MyWidget}> createState() => _${1:MyWidget}State();",
+      "}",
+      "",
+      "class _${1:MyWidget}State extends State<${1:MyWidget}> {",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return Scaffold(",
+      "      appBar: AppBar(",
+      "        title: const Text('${1:MyWidget}'),",
+      "      ),",
+      "      body: const Center(",
+      "        child: Text('Hello from ${1:MyWidget}'),",
+      "      ),",
+      "    );",
+      "  }",
+      "}"
+    ]
+  },
+
+  "Snippet: Flutter StatelessWidget": {
+    "prefix": "snippet:flutter:stless",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "",
+      "class ${1:MyWidget} extends StatelessWidget {",
+      "  const ${1:MyWidget}({super.key});",
+      "",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return Scaffold(",
+      "      appBar: AppBar(",
+      "        title: const Text('${1:MyWidget}'),",
+      "      ),",
+      "      body: const Center(",
+      "        child: Text('Hello from ${1:MyWidget}'),",
+      "      ),",
+      "    );",
+      "  }",
+      "}"
+    ]
+  }
+}
