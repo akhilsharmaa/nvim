@@ -111,8 +111,25 @@ return {
 			lualine_z = {},
 		},
 
-		winbar = {},
-		inactive_winbar = {},
+		winbar = {
+			lualine_z = {
+				{
+					'filename',
+					path = 1,
+					color = {}, -- important: use Neovim’s WinBar color, not lualine color
+				},
+			},
+		},
+
+		inactive_winbar = {
+			lualine_z = {
+				{
+					'filename',
+					path = 1,
+					color = {},
+				},
+			},
+		},
 		extensions = { 'quickfix', 'fzf' },
 	},
 }
