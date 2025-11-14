@@ -54,6 +54,12 @@ return {
 				Number = { fg = '#79c0ff' },    -- Blue numbers
 				Boolean = { fg = '#79c0ff' },   -- Blue booleans
 				Operator = { fg = '#ff7b72' },  -- Red operators
+
+				-- Neo-tree
+				NeoTreeNormal = { bg = 'palette.bg1', fg = '#cdcecf' },
+				NeoTreeNormalNC = { bg = 'palette.bg1', fg = '#cdcecf' },
+				NeoTreeWinSeparator = { fg = '#262626', bg = 'palette.bg1' },
+				NeoTreeEndOfBuffer = { fg = 'palette.bg1' },
 			},
 		},
 	},
