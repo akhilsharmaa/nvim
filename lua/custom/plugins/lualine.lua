@@ -18,7 +18,7 @@ local function git_remote_repo()
 	local icon
 	if domain then
 		if domain:match 'github%.com' then
-			icon = ' '
+			icon = ' '
 		elseif domain:match 'gitlab%.com' then
 			icon = ' '
 		elseif domain:match 'codeberg%.org' then
