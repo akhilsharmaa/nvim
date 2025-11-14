@@ -29,31 +29,25 @@ local function git_remote_repo()
   local result = handle:read '*a' or ''
   handle:close()
 
-  -- clean up output
   result = result:gsub('\n', ''):gsub('%.git$', '')
-
-  -- convert ssh form "git@github.com:user/repo" → "github.com/user/repo"
   result = result:gsub('^git@([^:]+):', 'https://%1/')
 
-  -- extract domain and user/repo
   local domain = result:match 'https?://([^/]+)/' or result:match '([^/]+)/'
   local repo = result:match 'https?://[^/]+/(.+)' or result:match '[^/]+/(.+)'
-
   if not repo then
     return ''
   end
 
-  -- determine icon based on domain
   local icon
   if domain then
     if domain:match 'github%.com' then
-      icon = ' ' -- github icon
+      icon = ' '
     elseif domain:match 'gitlab%.com' then
-      icon = ' ' -- gitlab icon
+      icon = ' '
     elseif domain:match 'codeberg%.org' then
       icon = ' '
     else
-      icon = ' ' -- generic git icon
+      icon = ' '
     end
   else
     icon = ' '
@@ -67,11 +61,11 @@ local function lsp()
   if #clients == 0 then
     return '󰒏 '
   end
-  local client_names = {}
+  local names = {}
   for _, client in ipairs(clients) do
-    table.insert(client_names, client.name)
+    table.insert(names, client.name)
   end
-  return '󰒋 ' .. table.concat(client_names, ', ')
+  return '󰒋 ' .. table.concat(names, ', ')
 end
 
 return {
@@ -80,31 +74,55 @@ return {
   opts = {
     options = {
       theme = 'onedark',
-      component_separators = { left = '|', right = '|' },
+      component_separators = { left = '', right = '' },
       section_separators = { left = '', right = '' },
       globalstatus = true,
       disabled_filetypes = {
         statusline = { 'neo-tree', 'NvimTree', 'Outline', 'aerial' },
-        winbar = {},
       },
     },
+
     sections = {
-      lualine_a = { 'mode' },
+      -- EVIL MODE BLOCK
+      lualine_a = {
+        {
+          'mode',
+          color = function()
+            local mode = vim.fn.mode()
+            local colors = {
+              n = { fg = '#000000', bg = '#e06c75' },
+              i = { fg = '#000000', bg = '#98c379' },
+              v = { fg = '#000000', bg = '#61afef' },
+              V = { fg = '#000000', bg = '#61afef' },
+              [''] = { fg = '#000000', bg = '#61afef' },
+              c = { fg = '#000000', bg = '#c678dd' },
+              R = { fg = '#000000', bg = '#d19a66' },
+            }
+            return colors[mode] or { fg = '#000000', bg = '#5c6370' }
+          end,
+
+          use_mode_colors = false,
+          padding = { left = 1, right = 1 },
+        },
+      },
+
       lualine_b = {
         'branch',
+        get_git_ahead_behind,
+        'diff',
         'diagnostics',
       },
+
       lualine_c = {
-        'diff',
+        git_remote_repo,
       },
+
       lualine_x = {
         lsp,
       },
-      lualine_y = {
-        git_remote_repo,
-        -- Supermaven status component with click to toggle
-        {
 
+      lualine_y = {
+        {
           function()
             local api = require 'supermaven-nvim.api'
             if api.is_running() then
@@ -113,14 +131,6 @@ return {
               return 'ai  '
             end
           end,
-          -- color = function()
-          --   local api = require("supermaven-nvim.api")
-          --   if api.is_running() then
-          --     return { fg = "#5170ff", gui = "bold" }
-          --   else
-          --     return { fg = "#808080", gui = "bold" }
-          --   end
-          -- end,
           on_click = function()
             local api = require 'supermaven-nvim.api'
             if api.is_running() then
@@ -133,28 +143,12 @@ return {
           end,
         },
       },
+
       lualine_z = {
         'location',
       },
     },
-    refresh = {
-      statusline = 1000,
-      tabline = 1000,
-      winbar = 1000,
-      refresh_time = 16,
-      events = {
-        'winenter',
-        'bufenter',
-        'bufwritepost',
-        'sessionloadpost',
-        'filechangedshellpost',
-        'vimresized',
-        'filetype',
-        'cursormoved',
-        'cursormovedi',
-        'modechanged',
-      },
-    },
+
     inactive_sections = {
       lualine_a = {},
       lualine_b = {},
@@ -163,7 +157,7 @@ return {
       lualine_y = {},
       lualine_z = {},
     },
-    -- Remove winbar sections - let dropbar handle this
+
     winbar = {},
     inactive_winbar = {},
     extensions = { 'quickfix', 'fzf' },
