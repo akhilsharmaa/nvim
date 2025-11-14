@@ -30,6 +30,8 @@ return {
 			global = true,
 		},
 		config = function()
+			vim.o.laststatus = 3 -- enable global statusline
+
 			local heirline = require 'heirline'
 			local conditions = require 'heirline.conditions'
 			local u = require 'heirline.utils'
