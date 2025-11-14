@@ -60,27 +60,8 @@ return {
 		},
 
 		sections = {
-			-- EVIL MODE BLOCK
 			lualine_a = {
-				{
-					'mode',
-					color = function()
-						local mode = vim.fn.mode()
-						local colors = {
-							n = { fg = '#000000', bg = '#e06c75' },
-							i = { fg = '#000000', bg = '#98c379' },
-							v = { fg = '#000000', bg = '#61afef' },
-							V = { fg = '#000000', bg = '#61afef' },
-							[''] = { fg = '#000000', bg = '#61afef' },
-							c = { fg = '#000000', bg = '#c678dd' },
-							R = { fg = '#000000', bg = '#d19a66' },
-						}
-						return colors[mode] or { fg = '#000000', bg = '#5c6370' }
-					end,
-
-					use_mode_colors = false,
-					padding = { left = 1, right = 1 },
-				},
+				'mode',
 			},
 
 			lualine_b = {},
