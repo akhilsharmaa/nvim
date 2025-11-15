@@ -14,7 +14,9 @@ return {
 				purple = '#a5a5ff', -- GitHub purple
 				comment = '#8b949e', -- GitHub comment gray
 
-				bg1 = '#1a1a1a', -- Custom background color
+
+				bg1 = '#0f0f0f', -- GitHub dark primary background
+				bg2 = '#0f0f0f', -- GitHub dark secondary background
 				bg_sidebar = '#141414', -- Sidebar / float background
 			},
 		},
@@ -45,21 +47,21 @@ return {
 
 				-- Syntax highlighting - GitHub Dark colors
 				Comment = { fg = 'palette.comment', style = 'italic' }, -- Gray comments
-				String = { fg = '#a5c261' },    -- Green strings
+				String = { fg = '#a5c261' }, -- Green strings
 				Function = { fg = '#d2a8ff', style = 'bold' }, -- Purple functions
 				Keyword = { fg = '#ff7b72', style = 'bold' }, -- Red keywords
-				Type = { fg = '#ffa657' },      -- Orange types
-				Constant = { fg = '#79c0ff' },  -- Blue constants
-				Variable = { fg = '#f0f6fc' },  -- White variables
-				Number = { fg = '#79c0ff' },    -- Blue numbers
-				Boolean = { fg = '#79c0ff' },   -- Blue booleans
-				Operator = { fg = '#ff7b72' },  -- Red operators
+				Type = { fg = '#ffa657' },  -- Orange types
+				Constant = { fg = '#79c0ff' }, -- Blue constants
+				Variable = { fg = '#f0f6fc' }, -- White variables
+				Number = { fg = '#79c0ff' }, -- Blue numbers
+				Boolean = { fg = '#79c0ff' }, -- Blue booleans
+				Operator = { fg = '#ff7b72' }, -- Red operators
 
 				-- Neo-tree
-				NeoTreeNormal = { bg = 'palette.bg1', fg = '#cdcecf' },
-				NeoTreeNormalNC = { bg = 'palette.bg1', fg = '#cdcecf' },
-				NeoTreeWinSeparator = { fg = '#262626', bg = 'palette.bg1' },
-				NeoTreeEndOfBuffer = { fg = 'palette.bg1' },
+				NeoTreeNormal = { bg = 'palette.bg2', fg = '#cdcecf' },
+				NeoTreeNormalNC = { bg = 'palette.bg2', fg = '#cdcecf' },
+				NeoTreeWinSeparator = { fg = '#262626', bg = 'palette.bg2' },
+				NeoTreeEndOfBuffer = { fg = 'palette.bg2' },
 			},
 		},
 	},
