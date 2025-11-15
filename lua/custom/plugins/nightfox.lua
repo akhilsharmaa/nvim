@@ -16,7 +16,7 @@ return {
 
 
 				bg1 = '#0f0f0f', -- GitHub dark primary background
-				bg2 = '#0f0f0f', -- GitHub dark secondary background
+				bg2 = '#0a0a0a', -- GitHub dark secondary background
 				bg_sidebar = '#141414', -- Sidebar / float background
 			},
 		},
