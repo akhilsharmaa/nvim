@@ -110,7 +110,7 @@ return {
 		opts = {
 			bind = true, -- This is mandatory, otherwise border config won't get registered
 			handler_opts = {
-				border = 'rounded' -- Border style: 'rounded', 'single', 'double', 'shadow'
+				border = 'single' -- Border style: 'rounded', 'single', 'double', 'shadow'
 			},
 
 			-- Floating window settings
