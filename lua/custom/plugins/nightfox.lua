@@ -16,52 +16,52 @@ return {
 
 
 				bg1 = '#0f0f0f', -- GitHub dark primary background
-				bg2 = '#0a0a0a', -- GitHub dark secondary background
+				bg2 = '#0f0f0f', -- GitHub dark secondary background
 				bg_sidebar = '#141414', -- Sidebar / float background
 			},
 		},
 		groups = {
 			nightfox = {
 				-- Main editor background
-				Normal = { fg = '#cdcecf', bg = 'palette.bg1' }, -- or use direct hex like bg = "#1a1a2e"
-				NormalFloat = { bg = 'palette.bg_sidebar' },
+				Normal              = { fg = '#cdcecf', bg = 'palette.bg1' }, -- or use direct hex like bg = "#1a1a2e"
+				NormalFloat         = { bg = 'palette.bg_sidebar' },
 
 				-- Custom highlight groups
-				Comment = { fg = 'palette.comment', style = 'italic' },
-				String = { fg = '#a3be8c' },
-				Function = { fg = '#88c0d0', style = 'bold' },
-				Keyword = { fg = '#81a1c1', style = 'bold' },
+				Comment             = { fg = 'palette.comment', style = 'italic' },
+				String              = { fg = '#a3be8c' },
+				Function            = { fg = '#88c0d0', style = 'bold' },
+				Keyword             = { fg = '#81a1c1', style = 'bold' },
 
 				-- Editor UI elements
-				CursorLine = { bg = '#21262d' }, -- Current line highlight
-				Visual = { bg = '#264f78' }, -- Selection background
-				Search = { fg = '#0d1117', bg = '#e3b341' }, -- Search highlight
-				LineNr = { fg = '#6e7681' }, -- Line numbers
-				CursorLineNr = { fg = '#f0f6fc', style = 'bold' }, -- Current line number
-				SignColumn = { bg = 'palette.bg1' }, -- Git signs column
-				StatusLine = { fg = '#f0f6fc', bg = '#21262d' }, -- Status line
+				CursorLine          = { bg = '#21262d' }, -- Current line highlight
+				Visual              = { bg = '#264f78' }, -- Selection background
+				Search              = { fg = '#0d1117', bg = '#e3b341' }, -- Search highlight
+				LineNr              = { fg = '#6e7681' }, -- Line numbers
+				CursorLineNr        = { fg = '#f0f6fc', style = 'bold' }, -- Current line number
+				SignColumn          = { bg = 'palette.bg1' }, -- Git signs column
+				StatusLine          = { fg = '#f0f6fc', bg = '#21262d' }, -- Status line
 
 				-- Window separators - WHITE COLOR
-				WinSeparator = { fg = '#262626', bg = 'palette.bg1' }, -- Modern separator
+				WinSeparator        = { fg = '#262626', bg = 'palette.bg1' }, -- Modern separator
 				-- VertSplit = { fg = "#ffffff", bg = "NONE" }, -- Legacy separator
 
 				-- Syntax highlighting - GitHub Dark colors
-				Comment = { fg = 'palette.comment', style = 'italic' }, -- Gray comments
-				String = { fg = '#a5c261' }, -- Green strings
-				Function = { fg = '#d2a8ff', style = 'bold' }, -- Purple functions
-				Keyword = { fg = '#ff7b72', style = 'bold' }, -- Red keywords
-				Type = { fg = '#ffa657' },  -- Orange types
-				Constant = { fg = '#79c0ff' }, -- Blue constants
-				Variable = { fg = '#f0f6fc' }, -- White variables
-				Number = { fg = '#79c0ff' }, -- Blue numbers
-				Boolean = { fg = '#79c0ff' }, -- Blue booleans
-				Operator = { fg = '#ff7b72' }, -- Red operators
+				Comment             = { fg = '#6e7681', style = 'italic' }, -- Subtle gray for comments
+				String              = { fg = '#9ece6a' }, -- Softer green strings
+				Function            = { fg = '#bb9af7', style = 'bold' }, -- Lavender purple for functions
+				Keyword             = { fg = '#f7768e', style = 'bold' }, -- Vibrant pink-red for keywords
+				Type                = { fg = '#e0af68' }, -- Muted gold for types
+				Constant            = { fg = '#7dcfff' }, -- Light cyan for constants
+				Variable            = { fg = '#c0caf5' }, -- Soft white-blue for variables
+				Number              = { fg = '#ff9e64' }, -- Warm orange for numbers
+				Boolean             = { fg = '#f7768e' }, -- Same tone as keywords for logicals
+				Operator            = { fg = '#89ddff' }, -- Bright cyan for operators
 
 				-- Neo-tree
-				NeoTreeNormal = { bg = 'palette.bg2', fg = '#cdcecf' },
-				NeoTreeNormalNC = { bg = 'palette.bg2', fg = '#cdcecf' },
+				NeoTreeNormal       = { bg = 'palette.bg2', fg = '#cdcecf' },
+				NeoTreeNormalNC     = { bg = 'palette.bg2', fg = '#cdcecf' },
 				NeoTreeWinSeparator = { fg = '#262626', bg = 'palette.bg2' },
-				NeoTreeEndOfBuffer = { fg = 'palette.bg2' },
+				NeoTreeEndOfBuffer  = { fg = 'palette.bg2' },
 			},
 		},
 	},
