@@ -23,14 +23,9 @@ return {
 		groups = {
 			nightfox = {
 				-- Main editor background
-				Normal              = { fg = '#cdcecf', bg = 'palette.bg1' }, -- or use direct hex like bg = "#1a1a2e"
-				NormalFloat         = { bg = 'palette.bg_sidebar' },
+				Normal      = { fg = '#cdcecf', bg = 'palette.bg1' }, -- or use direct hex like bg = "#1a1a2e"
+				NormalFloat = { bg = 'palette.bg_sidebar' },
 
-				-- Custom highlight groups
-				Comment             = { fg = 'palette.comment', style = 'italic' },
-				String              = { fg = '#a3be8c' },
-				Function            = { fg = '#88c0d0', style = 'bold' },
-				Keyword             = { fg = '#81a1c1', style = 'bold' },
 
 				-- Editor UI elements
 				CursorLine          = { bg = '#21262d' }, -- Current line highlight
@@ -46,16 +41,16 @@ return {
 				-- VertSplit = { fg = "#ffffff", bg = "NONE" }, -- Legacy separator
 
 				-- Syntax highlighting - GitHub Dark colors
-				Comment             = { fg = '#6e7681', style = 'italic' }, -- Subtle gray for comments
-				String              = { fg = '#9ece6a' }, -- Softer green strings
-				Function            = { fg = '#bb9af7', style = 'bold' }, -- Lavender purple for functions
-				Keyword             = { fg = '#f7768e', style = 'bold' }, -- Vibrant pink-red for keywords
-				Type                = { fg = '#e0af68' }, -- Muted gold for types
-				Constant            = { fg = '#7dcfff' }, -- Light cyan for constants
-				Variable            = { fg = '#c0caf5' }, -- Soft white-blue for variables
-				Number              = { fg = '#ff9e64' }, -- Warm orange for numbers
-				Boolean             = { fg = '#f7768e' }, -- Same tone as keywords for logicals
-				Operator            = { fg = '#89ddff' }, -- Bright cyan for operators
+				Comment             = { fg = '#75715e', style = 'italic' }, -- Warm gray for comments
+				String              = { fg = '#ffd866' }, -- Yellow for strings
+				Function            = { fg = '#a9dc76', style = 'bold' }, -- Green for functions
+				Keyword             = { fg = '#ff6188', style = 'bold' }, -- Pink-red for keywords
+				Type                = { fg = '#78dce8' }, -- Cyan for types
+				Constant            = { fg = '#ae81ff' }, -- Purple for constants
+				Variable            = { fg = '#f8f8f2' }, -- Off-white for variables
+				Number              = { fg = '#ae81ff' }, -- Purple for numbers
+				Boolean             = { fg = '#ae81ff' }, -- Purple for booleans
+				Operator            = { fg = '#ff6188' }, -- Pink-red for operators
 
 				-- Neo-tree
 				NeoTreeNormal       = { bg = 'palette.bg2', fg = '#cdcecf' },
