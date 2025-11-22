@@ -15,8 +15,8 @@ return {
 				comment = '#8b949e', -- GitHub comment gray
 
 
-				bg1 = '#0f0f0f', -- GitHub dark primary background
-				bg2 = '#0f0f0f', -- GitHub dark secondary background
+				bg1 = '#18171e', -- GitHub dark primary background
+				bg2 = '#26252c', -- GitHub dark secondary background
 				bg_sidebar = '#141414', -- Sidebar / float background
 			},
 		},
