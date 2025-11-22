@@ -1,4 +1,40 @@
+local function git_remote_repo()
+	local handle = io.popen 'git remote get-url origin 2>/dev/null'
+	if not handle then
+		return ''
+	end
+	local result = handle:read '*a' or ''
+	handle:close()
+
+	result = result:gsub('\n', ''):gsub('%.git$', '')
+	result = result:gsub('^git@([^:]+):', 'https://%1/')
+
+	local domain = result:match 'https?://([^/]+)/' or result:match '([^/]+)/'
+	local repo = result:match 'https?://[^/]+/(.+)' or result:match '[^/]+/(.+)'
+	if not repo then
+		return ''
+	end
+
+	local icon
+	if domain then
+		if domain:match 'github%.com' then
+			icon = ' '
+		elseif domain:match 'gitlab%.com' then
+			icon = ' '
+		elseif domain:match 'codeberg%.org' then
+			icon = ' '
+		else
+			icon = ' '
+		end
+	else
+		icon = ' '
+	end
+
+	return icon .. repo
+end
+
 return {
+
 	-- Add nvim-web-devicons first
 	{
 		'nvim-tree/nvim-web-devicons',
@@ -111,6 +147,43 @@ return {
 					self.buffer = vim.api.nvim_get_current_buf()
 				end,
 			}
+			local GitSourceControl = {
+				init = function()
+					local handle = io.popen 'git remote get-url origin 2>/dev/null'
+					if not handle then
+						return ''
+					end
+					local result = handle:read '*a' or ''
+					handle:close()
+
+					result = result:gsub('\n', ''):gsub('%.git$', '')
+					result = result:gsub('^git@([^:]+):', 'https://%1/')
+
+					local domain = result:match 'https?://([^/]+)/' or result:match '([^/]+)/'
+					local repo = result:match 'https?://[^/]+/(.+)' or result:match '[^/]+/(.+)'
+					if not repo then
+						return ''
+					end
+
+					local icon
+					if domain then
+						if domain:match 'github%.com' then
+							icon = ' '
+						elseif domain:match 'gitlab%.com' then
+							icon = ' '
+						elseif domain:match 'codeberg%.org' then
+							icon = ' '
+						else
+							icon = ' '
+						end
+					else
+						icon = ' '
+					end
+
+					return icon .. repo .. ' '
+				end,
+			}
+
 			local NeoTest = {
 				condition = function(self)
 					local status = neotest.state.status_counts(self.adapter_ids[1],
@@ -135,7 +208,8 @@ return {
 					end,
 					init = function(self)
 						self.adapter = vim.split(
-						vim.split(self.adapter_ids[1], ':', { plain = true })[1], 'neotest-',
+							vim.split(self.adapter_ids[1], ':', { plain = true })[1],
+							'neotest-',
 							{ plain = true })[2]
 					end,
 					provider = function(self)
@@ -445,7 +519,7 @@ return {
 				init = function(self)
 					local max = 0.35 * vim.api.nvim_win_get_width(0)
 					self.status.head = u.count_chars(self.status.head) < max and self.status.head or
-					string.format('%s...', string.sub(self.status.head, 1, max))
+					    string.format('%s...', string.sub(self.status.head, 1, max))
 				end,
 				{
 					provider = function(self)
@@ -590,7 +664,7 @@ return {
 					end
 					local session = dap.session()
 					return session ~= nil and conditions.is_active() and
-					not conditions.buffer_matches(dap_inactive)
+					    not conditions.buffer_matches(dap_inactive)
 				end,
 				provider = function()
 					local status = require('dap').status()
@@ -628,6 +702,10 @@ return {
 				DAPBlock,
 				NeoTestBlock,
 				DiagnosticsBlock,
+				{
+					provider = GitSourceControl.init,
+					hl = { bg = colors.null, fg = colors.dragonAqua },
+				},
 				RulerBlock,
 				hl = function()
 					if conditions.is_active() then

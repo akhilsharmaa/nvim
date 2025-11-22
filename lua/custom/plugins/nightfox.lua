@@ -16,16 +16,15 @@ return {
 
 
 				bg1 = '#18171e', -- GitHub dark primary background
-				bg2 = '#26252c', -- GitHub dark secondary background
+				bg2 = '#18171e', -- GitHub dark secondary background
 				bg_sidebar = '#141414', -- Sidebar / float background
 			},
 		},
 		groups = {
 			nightfox = {
 				-- Main editor background
-				Normal      = { fg = '#cdcecf', bg = 'palette.bg1' }, -- or use direct hex like bg = "#1a1a2e"
-				NormalFloat = { bg = 'palette.bg_sidebar' },
-
+				Normal              = { fg = '#cdcecf', bg = 'palette.bg1' }, -- or use direct hex like bg = "#1a1a2e"
+				NormalFloat         = { bg = 'palette.bg_sidebar' },
 
 				-- Editor UI elements
 				CursorLine          = { bg = '#21262d' }, -- Current line highlight

@@ -1005,3 +1005,8 @@ require('lazy').setup({
 -- vim: ts=2 sts=2 sw=2 et
 vim.cmd 'colorscheme nightfox'
 -- vim.opt.wrap = false
+--
+vim.api.nvim_set_hl(0, 'FloatBorder', { fg = '#7aa2f7', bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'ToggleTerm', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'ToggleTermNormal', { bg = 'none' })
