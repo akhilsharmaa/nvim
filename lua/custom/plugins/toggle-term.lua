@@ -48,9 +48,9 @@ return {
 		},
 
 		highlights = {
-			Normal      = { guibg = '#1a1a1a' },
-			NormalFloat = { guibg = '#131313' },
-			FloatBorder = { guifg = '#6e6e6e', guibg = '#1a1a1a', style = 'bold' },
+			Normal      = { guibg = '#0c1117' },
+			NormalFloat = { guibg = '#0c1117' },
+			FloatBorder = { guifg = '#6e6e6e', guibg = '#0c1117', style = 'bold' },
 		},
 
 		winbar = {
