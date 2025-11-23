@@ -23,21 +23,21 @@ return {
 			desc = "Restore Session",
 		},
 		{
-			"<leader>rs",
+			"<leader>rl",
 			function()
 				require("persistence").select()
 			end,
 			desc = "Select Session",
 		},
 		{
-			"<leader>rl",
+			"<leader>rR",
 			function()
 				require("persistence").load({ last = true })
 			end,
 			desc = "Restore Last Session",
 		},
 		{
-			"<leader>rw",
+			"<leader>rs",
 			function()
 				require("persistence").save()
 			end,
